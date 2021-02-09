@@ -2,7 +2,7 @@
 <addon id="plugin.video.italy-tv"
   version="1.0.1"
   name="Italy TV Streaming"
-  provider-name="Syco">
+  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
     <import addon="script.module.requests" />
