@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="repository.Syco" name="Cool Stuff" version="1.0.0" provider-name="syco">
+  <extension point="xbmc.addon.repository" name="Example Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Cool Stuff</summary>
+    <description>Syco's Super Cool Plugins</description>
+    <disclaimer></disclaimer>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
+<addon id="plugin.video.italy-tv"
+  version="1.0.0"
+  name="Italy TV Streaming"
+  provider-name="Syco">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.beautifulsoup4"/>
+    <!-- <import addon="script.module.httplib2"/> -->
+    <import addon="plugin.video.streamlink-tester"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Italy TV Kodi Video Plugin</summary>
+    <description lang="en">An Italy TV video plugin for Kodi mediacenter</description>
+    <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <forum>https://github.com/syco/plugin.video.italy-tv</forum>
+    <website>https://github.com/syco/plugin.video.italy-tv</website>
+    <email></email>
+    <source>https://github.com/syco/plugin.video.italy-tv</source>
+  </extension>
+</addon>
+</addons>
