@@ -36,10 +36,10 @@ def list_channels():
     header = channels_col.find('li', 'header')
     header_title = header.getText().strip()
 
-    #headerItem = xbmcgui.ListItem(label=header_title)
-    #headerItem.setInfo('video', {'title': header_title, 'mediatype': 'video'})
-    #headerItem.setProperty('IsPlayable', 'false')
-    #xbmcplugin.addDirectoryItem(handle=_handle, url="", listitem=headerItem, isFolder=False)
+    headerItem = xbmcgui.ListItem(label="[COLOR red][B]{}[/B][/COLOR]".format(header_title))
+    headerItem.setInfo('video', {'title': header_title, 'mediatype': 'video'})
+    headerItem.setProperty('IsPlayable', 'false')
+    xbmcplugin.addDirectoryItem(handle=_handle, url="", listitem=headerItem, isFolder=False)
 
     xbmc.log("---------------------------", xbmc.LOGNOTICE)
     xbmc.log(header_title, xbmc.LOGNOTICE)
