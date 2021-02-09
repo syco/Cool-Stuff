@@ -1,7 +1,8 @@
 ## Kodi plug-ins ##
 
 ### Downloads ###
-[REPO](./repo)
+[PAGE](https://syco.github.io/Cool-Stuff)
+[REPO](https://syco.github.io/Cool-Stuff/repo)
 
 ### Help! ###
 If you think this piece of code has been useful to you and want to share some love, here's how:
