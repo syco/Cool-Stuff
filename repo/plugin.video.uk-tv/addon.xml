@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.italy-tv"
-  version="1.0.2"
-  name="Italy TV Streaming"
+<addon id="plugin.video.uk-tv"
+  version="1.0.0"
+  name="UK TV Streaming"
   provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
@@ -14,8 +14,8 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <summary lang="en">Italy TV Kodi Video Plugin</summary>
-    <description lang="en">An Italy TV video plugin for Kodi mediacenter</description>
+    <summary lang="en">UK TV Kodi Video Plugin</summary>
+    <description lang="en">An UK TV video plugin for Kodi mediacenter</description>
     <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
     <assets>
       <icon>icon.png</icon>

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.italy-tv"
-  version="1.0.1"
+  version="1.0.2"
   name="Italy TV Streaming"
-  provider-name="Syco">
+  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
     <import addon="script.module.requests" />
     <import addon="script.module.beautifulsoup4"/>
-    <!-- <import addon="script.module.httplib2"/> -->
     <import addon="plugin.video.streamlink-tester"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
@@ -21,9 +20,6 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <forum>https://github.com/syco/plugin.video.italy-tv</forum>
-    <website>https://github.com/syco/plugin.video.italy-tv</website>
-    <email></email>
-    <source>https://github.com/syco/plugin.video.italy-tv</source>
+    <source>https://github.com/syco/Cool-Stuff</source>
   </extension>
 </addon>
