@@ -45,51 +45,27 @@ def list_channels():
   for channel in channels_list:
     videoItem = xbmcgui.ListItem(label=channel['title'])
     videoItem.setInfo('video', {'title': channel['title'], 'mediatype': 'video'})
+    videoItem.setProperty('IsPlayable', 'true')
     data = {
-        "action": "scrape",
+        "action": "play",
         "title": channel['title'],
         "link" : channel['link']
         }
-    xbmcplugin.addDirectoryItem(handle=_handle, url='{0}?{1}'.format(_pid, urllib.urlencode(data)), listitem=videoItem, isFolder=True)
+    xbmcplugin.addDirectoryItem(handle=_handle, url='{0}?{1}'.format(_pid, urllib.urlencode(data)), listitem=videoItem, isFolder=False)
     xbmc.log("{}: {}".format(channel['title'], channel['link']), xbmc.LOGNOTICE)
 
   xbmcplugin.endOfDirectory(_handle)
 
 
-def list_links(params):
-  xbmcplugin.setPluginCategory(_handle, 'UK TV')
-  xbmcplugin.setContent(_handle, 'videos')
-
+def play_video(params):
   html = requests.get(params['link'][0], headers=headers).content
   #xbmc.log(html, xbmc.LOGNOTICE)
   soup = BeautifulSoup(html, 'html.parser')
 
-  c = 1
+  link = soup.find('iframe')
+  link_strip = link.get('src').strip()
 
-  iframes = soup.find_all('iframe')
-  for link in iframes:
-    link_title = "Link {}".format(c)
-    c += 1
-    link_strip = link.get('src').strip()
-
-    videoItem = xbmcgui.ListItem(label=link_title)
-    videoItem.setInfo('video', {'title': link_title, 'mediatype': 'video'})
-    videoItem.setProperty('IsPlayable', 'true')
-    data = {
-        "action": "play",
-        "url" : link_strip,
-        "quality": "best",
-        "title": link_title,
-        "image": ""
-        }
-    xbmcplugin.addDirectoryItem(handle=_handle, url='plugin://plugin.video.streamlink-tester/?{1}'.format(_pid, urllib.urlencode(data)), listitem=videoItem, isFolder=False)
-    #xbmc.log(link_title, xbmc.LOGNOTICE)
-
-  xbmcplugin.endOfDirectory(_handle)
-
-
-def play_video(params):
-  xbmcplugin.setResolvedUrl(_handle, True, listitem=xbmcgui.ListItem(path=params['link'][0]))
+  xbmcplugin.setResolvedUrl(_handle, True, listitem=xbmcgui.ListItem(path=link_strip))
 
 
 xbmc.log(" ".join(sys.argv), xbmc.LOGNOTICE)
@@ -108,8 +84,6 @@ def router(paramstring):
   if params:
     if params['action'][0] == 'play':
       play_video(params)
-    elif params['action'][0] == 'scrape':
-      list_links(params)
     else:
       list_channels()
 
