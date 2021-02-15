@@ -36,7 +36,7 @@ def list_channels():
     header = channels_col.find('li', 'header')
     header_title = header.getText().strip()
 
-    headerItem = xbmcgui.ListItem(label="[COLOR red][B]{}[/B][/COLOR]".format(header_title))
+    headerItem = xbmcgui.ListItem("[COLOR red][B][UPPERCASE]{}[/UPPERCASE][/B][/COLOR]".format(header_title))
     headerItem.setInfo('video', {'title': header_title, 'mediatype': 'video'})
     headerItem.setProperty('IsPlayable', 'false')
     xbmcplugin.addDirectoryItem(handle=_handle, url="", listitem=headerItem, isFolder=False)
@@ -49,7 +49,7 @@ def list_channels():
       link = channel.find('a')
       link_title = link.getText().strip()
 
-      videoItem = xbmcgui.ListItem(label=link_title)
+      videoItem = xbmcgui.ListItem(link_title)
       videoItem.setInfo('video', {'title': link_title, 'mediatype': 'video'})
       data = {
           "action": "scrape",
@@ -61,6 +61,7 @@ def list_channels():
 
     xbmc.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^", xbmc.LOGNOTICE)
 
+  xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_NONE)
   xbmcplugin.endOfDirectory(_handle)
 
 
@@ -86,7 +87,7 @@ def list_links(params):
       c += 1
       link_strip = link.get('src').strip()
 
-      videoItem = xbmcgui.ListItem(label=link_title)
+      videoItem = xbmcgui.ListItem(link_title)
       videoItem.setInfo('video', {'title': link_title, 'mediatype': 'video'})
       videoItem.setProperty('IsPlayable', 'true')
       data = {
@@ -106,7 +107,7 @@ def list_links(params):
       c += 1
       link_strip = link.strip()
 
-      videoItem = xbmcgui.ListItem(label=link_title)
+      videoItem = xbmcgui.ListItem(link_title)
       videoItem.setInfo('video', {'title': link_title, 'mediatype': 'video'})
       videoItem.setProperty('IsPlayable', 'true')
       data = {
@@ -117,6 +118,7 @@ def list_links(params):
       xbmcplugin.addDirectoryItem(handle=_handle, url='{0}?{1}'.format(_pid, urllib.urlencode(data)), listitem=videoItem, isFolder=False)
       #xbmc.log(link_title, xbmc.LOGNOTICE)
 
+  xbmcplugin.addSortMethod(_handle, xbmcplugin.SORT_METHOD_LABEL)
   xbmcplugin.endOfDirectory(_handle)
 
 
