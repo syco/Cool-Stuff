@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.1" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
-  <extension point="xbmc.addon.repository" name="Example Repository">
-    <dir>
-      <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
-    </dir>
+<addon id="plugin.video.uk-tv"
+  version="1.0.1"
+  name="UK TV Streaming"
+  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="plugin.video.streamlink-tester"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>Cool Stuff</summary>
-    <description>Syco's Super Cool Plugins</description>
-    <disclaimer></disclaimer>
     <platform>all</platform>
+    <summary lang="en">UK TV Kodi Video Plugin</summary>
+    <description lang="en">An UK TV video plugin for Kodi mediacenter</description>
+    <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
     <assets>
       <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
     </assets>
+    <source>https://github.com/syco/Cool-Stuff</source>
   </extension>
 </addon>
 
 <addon id="plugin.video.italy-tv"
-  version="1.0.4"
+  version="1.0.5"
   name="Italy TV Streaming"
   provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
@@ -45,28 +50,23 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.uk-tv"
-  version="1.0.1"
-  name="UK TV Streaming"
-  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="plugin.video.streamlink-tester"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
+<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.1" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+  <extension point="xbmc.addon.repository" name="Example Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
+    </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
+    <summary>Cool Stuff</summary>
+    <description>Syco's Super Cool Plugins</description>
+    <disclaimer></disclaimer>
     <platform>all</platform>
-    <summary lang="en">UK TV Kodi Video Plugin</summary>
-    <description lang="en">An UK TV video plugin for Kodi mediacenter</description>
-    <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
     <assets>
       <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
     </assets>
-    <source>https://github.com/syco/Cool-Stuff</source>
   </extension>
 </addon>
 </addons>
