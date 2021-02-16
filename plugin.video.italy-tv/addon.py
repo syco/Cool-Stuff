@@ -34,9 +34,9 @@ def list_channels():
 
   for channels_col in channels_cols:
     header = channels_col.find('li', 'header')
-    header_title = header.getText().strip()
+    header_title = "[COLOR red][B][UPPERCASE]{}[/UPPERCASE][/B][/COLOR]".format(header.getText().strip())
 
-    headerItem = xbmcgui.ListItem("[COLOR red][B][UPPERCASE]{}[/UPPERCASE][/B][/COLOR]".format(header_title))
+    headerItem = xbmcgui.ListItem(header_title)
     headerItem.setInfo('video', {'title': header_title, 'mediatype': 'video'})
     headerItem.setProperty('IsPlayable', 'false')
     xbmcplugin.addDirectoryItem(handle=_handle, url="", listitem=headerItem, isFolder=False)
