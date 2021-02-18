@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.2" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
-  <extension point="xbmc.addon.repository" name="Example Repository">
+<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.3" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+  <extension point="xbmc.addon.repository" name="Super Cool Stuff">
     <dir>
       <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
       <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
       <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
-    </dir>
-    <dir>
-      <info compressed="false">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml</info>
-      <checksum>http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml.md5</checksum>
-      <datadir zip="true">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/</datadir>
     </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
