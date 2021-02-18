@@ -1,27 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.uk-tv"
-  version="1.0.1"
-  name="UK TV Streaming"
-  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+<addon id="script.module.streamlink.base" name="Streamlink Library" version="2020.09.07.1" provider-name="Streamlink Devs, Twilight0">
   <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.beautifulsoup4"/>
-    <import addon="plugin.video.streamlink-tester"/>
+      <import addon="xbmc.python" version="2.26.0"/>
+      <import addon="script.module.requests" version="2.12.4"/>
+      <import addon="script.module.futures" version="0.0.0.1"/>
+      <import addon="script.module.pycryptodome" />
   </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>video</provides>
+  <extension point="xbmc.python.module" library="resources/lib/"/>
+  <extension point="xbmc.addon.metadata">
+      <summary>Streamlink Library for Kodi</summary>
+      <description>Streamlink Library for Kodi. It is a collection of plugins to help resolve web page urls into streamable links. Known issue: Does not work on Xbox, specifically throws exception when trying to import something from ctypes module.</description>
+      <platform>all</platform>
+      <license>Simplified BSD</license>
+      <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
+      <language>en</language>
+      <assets>
+          <icon>icon.png</icon>
+      </assets>
+      <news>+2020.09.07.1
+- Update to latest upstream commit
+- Remove on demand installation of futures module
+- Add dummy futures module for Kodi 19
+
++2020.08.09
+- Update to latest upstream commit
+- Futures module is not set to optional (on Kodi 19 it is not imported)</news>
+  </extension>
+</addon>
+
+<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.2" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+  <extension point="xbmc.addon.repository" name="Example Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
+    </dir>
+    <dir>
+      <info compressed="false">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml</info>
+      <checksum>http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml.md5</checksum>
+      <datadir zip="true">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/</datadir>
+    </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
+    <summary>Cool Stuff</summary>
+    <description>Syco's Super Cool Plugins</description>
+    <disclaimer></disclaimer>
     <platform>all</platform>
-    <summary lang="en">UK TV Kodi Video Plugin</summary>
-    <description lang="en">An UK TV video plugin for Kodi mediacenter</description>
-    <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
     <assets>
       <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
     </assets>
-    <source>https://github.com/syco/Cool-Stuff</source>
   </extension>
 </addon>
 
@@ -50,28 +79,28 @@
   </extension>
 </addon>
 
-<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.2" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
-  <extension point="xbmc.addon.repository" name="Example Repository">
-    <dir>
-      <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
-      <checksum>https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml.md5</checksum>
-      <datadir zip="true">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/</datadir>
-    </dir>
-    <dir>
-      <info compressed="false">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml</info>
-      <checksum>http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml.md5</checksum>
-      <datadir zip="true">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/</datadir>
-    </dir>
+<addon id="plugin.video.uk-tv"
+  version="1.0.1"
+  name="UK TV Streaming"
+  provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.beautifulsoup4"/>
+    <import addon="plugin.video.streamlink-tester"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>Cool Stuff</summary>
-    <description>Syco's Super Cool Plugins</description>
-    <disclaimer></disclaimer>
     <platform>all</platform>
+    <summary lang="en">UK TV Kodi Video Plugin</summary>
+    <description lang="en">An UK TV video plugin for Kodi mediacenter</description>
+    <disclaimer lang="en">Videos are provided by people... online... somewhere...</disclaimer>
     <assets>
       <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
     </assets>
+    <source>https://github.com/syco/Cool-Stuff</source>
   </extension>
 </addon>
 </addons>
