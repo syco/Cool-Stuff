@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.italy-tv"
-  version="1.0.9"
+  version="1.1.0"
   name="Italy TV Streaming"
   provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
