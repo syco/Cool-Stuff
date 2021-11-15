@@ -24,13 +24,35 @@
   </extension>
 </addon>
 
+<addon id="script.module.streamlink" name="Streamlink Library" version="2021.11.15.1" provider-name="Streamlink Devs, Twilight0, Syco">
+  <requires>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+      <import addon="script.module.pycryptodome"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib"/>
+  <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Streamlink Library for Kodi</summary>
+      <description lang="en_GB">Streamlink Library for Kodi. It is a collection of plugins to help resolve web page urls into streamable links. Known issue: Does not work on Xbox, specifically throws exception when trying to import something from ctypes module.</description>
+      <platform>all</platform>
+      <license>Simplified BSD</license>
+      <website>https://syco.github.io/Cool-Stuff/repo/</website>
+      <source>https://github.com/syco/script.module.streamlink/</source>
+      <language>en</language>
+      <assets>
+          <icon>icon.png</icon>
+      </assets>
+  </extension>
+</addon>
+
 <addon id="plugin.video.italy-tv"
-  version="2.0.1"
+  version="3.0.0"
   name="Italy TV Streaming"
   provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <requires>
     <import addon="script.module.requests" />
-    <import addon="script.module.beautifulsoup4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.streamlink" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="addon.py">
     <provides>video</provides>
@@ -47,7 +69,7 @@
   </extension>
 </addon>
 
-<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.3" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.4" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <extension point="xbmc.addon.repository" name="Super Cool Stuff">
     <dir>
       <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
