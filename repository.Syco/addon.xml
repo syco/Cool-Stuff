@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.3" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
+<addon id="repository.Syco" name="[COLOR deepskyblue][B]Cool Stuff[/B][/COLOR]" version="1.0.4" provider-name="[COLOR dodgerblue][B]Syco[/B][/COLOR]">
   <extension point="xbmc.addon.repository" name="Super Cool Stuff">
     <dir>
       <info compressed="false">https://raw.githubusercontent.com/syco/repository.Syco/kodi/repo/addons.xml</info>
